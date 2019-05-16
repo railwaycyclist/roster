@@ -1,0 +1,41 @@
+
+{% extends "./_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{{ form.certifications.errors }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">データ入力</h2>
+        </div>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right">
+                    <a class="btn btn-outline-secondary" href="{% url 'index' %}">戻る</a>
+                    <button class="btn btn-outline-secondary" type='submit' name='action' value='send'>保存</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ form|crispy }}
+                <!-- これだとPOST不可　{% crispy form %}-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class ="float-right">
+                    <a class="btn btn-outline-secondary" href="{% url 'index' %}">戻る</a>   
+                    <!-- 保存ボタンを生成 -->
+                    <!-- 参考 https://qiita.com/irxground/items/c8537d30e9760c5b3e5c -->
+                    <button class="btn btn-outline-secondary" type='submit' name='action' value='send'>保存</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

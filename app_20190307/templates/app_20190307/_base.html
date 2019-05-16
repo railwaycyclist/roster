@@ -1,0 +1,60 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang ="ja">
+
+
+<head>
+    <!-- Required meta tags always come first -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Y's roster</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="{% static "app_20190307/css/app_20190307.css" %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- タイトルを押してトップに戻れるようにする -->
+        <a class="navbar-brand" href="{% url 'index' %}">Y's roster</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav active">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'admin:index'%}">管理サイト</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:logout'%}">ログアウト</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    {% block content %}
+    {% endblock %}
+    
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery CDN からファイルを読み込む -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- bootstrap4の宣言 -->
+    <!-- ここは 上の1行と下の2行を入れないとbootstrapが動作しない -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="{% static "app_20190307/js/plugins/responsive-paginate.js" %}"></script>
+    <script src="{% static "app_20190307/js/app_20190307.js" %}"></script>
+    
+</body>
+
+
+</html>
